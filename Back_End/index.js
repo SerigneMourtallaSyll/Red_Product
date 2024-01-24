@@ -26,6 +26,16 @@ let upload = multer({
 app.use(express.json());
 app.use(cors());
 
+app.use(cors({
+  origin: ["https://red-product-frontend.vercel.app/"],
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
+}))
+
+app.get("/", (req, res) => {
+  res.send("Hello");
+})
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
