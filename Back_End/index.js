@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-  origin: ["https://red-product-frontend.vercel.app/"],
+  origin: ["https://red-product-frontend.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }))
