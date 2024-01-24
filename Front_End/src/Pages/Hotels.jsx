@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import HotelsCard from "../components/HotelsCard";
 import Modals from "../components/Modals";
 import Button from "../components/Button";
-import axios from "axios";
 
 function Hotels() {
   const [modalShow, setModalShow] = useState(false);
