@@ -13,7 +13,7 @@ function SignUpLogique() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", { name, email, password })
+      .post("https://red-product-frontend.vercel.app/register", { name, email, password })
       .then((res) => {
         if (res.status === 200) {
           toast.success("Inscription réussie avec succès")
