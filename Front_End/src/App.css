@@ -103,6 +103,22 @@ body {
   height: 50px;
 }
 
+.connexion .form-footer h5,
+.connexion .form-footer span,
+.inscription .form-footer h5,
+.inscription .form-footer span {
+  color: #ffd964 !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.connexion .form-footer,
+.inscription .form-footer {
+  color: #fff;
+}
+
 /*----------------------Formulaire css------------------*/
 .inscription .bouton,
 .connexion .bouton,
@@ -113,6 +129,7 @@ body {
   color: #fff;
 }
 
+/*----------------------Page hotel css-------------------*/
 .hotels .bouton:focus {
   outline: none !important;
 }
@@ -193,24 +210,28 @@ body {
   border-radius: 14px;
 }
 
+.hotels {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.hotels .titleHotels {
+  background-color: #fff;
+}
+
+.hotels .titleHotels .bouton {
+  background-color: transparent;
+  color: #0cc2aa;
+  border-radius: 14px;
+  border: 1px solid #0cc2aa;
+}
+.hotels .modal-footer .bouton {
+  border: none !important;
+}
+
 .form-demo .card {
   min-width: 450px;
-}
-
-.connexion .form-footer h5,
-.connexion .form-footer span,
-.inscription .form-footer h5,
-.inscription .form-footer span {
-  color: #ffd964 !important;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px;
-}
-
-.connexion .form-footer,
-.inscription .form-footer {
-  color: #fff;
 }
 
 .form-demo .card form {
@@ -220,6 +241,8 @@ body {
 .App {
   text-align: center;
 }
+
+/*------------------------Sidebar css----------------------*/
 
 .sidebar {
   background-image: url("../src/assets/images/imagedefond.jpg");
@@ -253,9 +276,13 @@ body {
   font-weight: bold;
 }
 
-.sidebar .items:focus {
+.sidebar .linkSidebar .active{
   background-color: #fff;
   color: #000;
+}
+
+.sidebar #search-icon{
+  display: none !important;
 }
 
 .linkSidebar {
@@ -266,10 +293,14 @@ body {
 .contentNavbar {
   width: 100%;
 }
-
+/*-----------------------Navbar css-------------------*/
 .navbar {
   background: #ffffff;
   padding: 0 !important;
+}
+
+.navbar .mobileSearch{
+  display: none;
 }
 
 .navbar .dropdown-toggle::after {
@@ -293,7 +324,7 @@ body {
 .navbar input[type="search"]:focus{
   box-shadow: none;
 }
-
+/*Badge de la cloche de notification*/
 .css-dlwkee-MuiBadge-badge {
   background-color: #fcc100 !important;
 }
@@ -312,12 +343,7 @@ body {
   color: inherit !important;
 }
 
-.onlineBtn {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  background-color: #00ff92;
-}
+/*-------------Dashboard css-------------*/
 
 .dashboardCard {
   background: #f0f0f0;
@@ -327,10 +353,21 @@ body {
 .hotels .titleHotels h6 {
   color: rgba(0, 0, 0, 0.87);
   font-family: "Roboto";
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 100 !important;
-  line-height: 35.195px; /* 110% */
+  line-height: 35.195px;
+  margin-bottom: 2px;
+}
+
+.hotels .cardHotels .modal-footer .bouton{
+  border: none;
+  background-color: transparent;
+}
+
+.hotels .formModals input:focus {
+  outline: none;
+  box-shadow: none !important;
 }
 
 .dashboard {
@@ -339,28 +376,12 @@ body {
   background-color: #f0f0f0;
 }
 
-.hotels {
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-
-.hotels .titleHotels {
-  background-color: #fff;
-}
-
 .dashboard .cards {
   border-radius: 14px;
 }
 
 .dashboard .titleDashboard {
   background-color: #fff;
-}
-.hotels .titleHotels .bouton {
-  background-color: transparent;
-  color: #0cc2aa;
-  border-radius: 14px;
-  border: 1px solid #0cc2aa;
 }
 
 #icon1 .icon {
@@ -394,7 +415,7 @@ body {
   background-color: #1565c0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 765px) {
   .sidebar #logo span {
     font-size: 12px !important;
   }
@@ -418,7 +439,7 @@ body {
 
   .template .contenu #sidebarDiv {
     width: 100% !important;
-    height: 100px !important;
+    height: 70vh !important;
     position: fixed !important;
     bottom: 0;
     left: 0;
@@ -431,8 +452,14 @@ body {
   }
 
   .template .contenu #sidebarDiv #logo,
-  .template .contenu #sidebarDiv hr {
+  .template .contenu #sidebarDiv hr  {
     display: none !important;
+  }
+
+  .sidebar .linkSidebar .active  {
+    background-color: transparent !important;
+    color: #fff;
+    transform: scale(1.3) !important;
   }
 
   .template .contenu #sidebarDiv .sidebar .linkSidebar .items {
@@ -444,8 +471,32 @@ body {
     height: 80% !important;
   }
 
-  .template .contenu #sidebarDiv .sidebar .linkSidebar .items span {
-    display: none;
+  .template .contenu #sidebarDiv .sidebar .linkSidebar .items .textSidebar, .sidebar h6, .sidebar .nameOnline {
+    display: none !important;
+  }
+
+  .sidebar .containerOnline{
+    height: 80% !important;
+    width: 40% !important;
+  }
+
+  .sidebar .linkSidebar .iconSidebar svg{
+    font-size: 40px !important;
+  }
+
+  .sidebar #search-icon{
+    display: block !important;
+  }
+
+  .sidebar #search-icon svg{
+    font-size: 40px !important;
+  }
+
+  .sidebar .contentOnline{
+    margin-top: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    border: none !important;
   }
 
   .items i {
@@ -463,11 +514,91 @@ body {
   .template .contenu #sidebarDiv .sidebar {
     margin: 0 !important;
     padding: 0 !important;
-    height: 100% !important;
     z-index: 1000 !important;
+    display: flex !important;
+    align-items: center ;
+    height: 50vh !important;
     bottom: 0;
     left: 0;
     right: 0;
+  }
+
+
+  .sidebar .accountCircle{
+    width: 100%;
+    font-size: 2rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .template .contenu .cardHotels{
+    width: 90% !important;
+  }
+
+  #createHotel{
+    font-size: 10px !important;
+  }
+  #createHotel i{
+    font-size: 15px !important;
+  }
+
+  .hotels .titleHotels{
+    padding: 4% !important;
+  }
+
+  .hotels .titleHotels h6{
+    font-size: 24px !important;
+  }
+
+  .navbar form{
+    display: none !important;
+  }
+
+  .navbar #navbarNav{
+    display: flex !important; 
+    flex-direction: column-reverse !important;
+  }
+
+  .navbar ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .navbar .mobileSearch{
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .navbar .mobileSearch form{
+    display: flex !important;
+    width: 100% !important;
+  }
+  .navbar .mobileSearch form .input-group{
+    width: 80% !important;
+  }
+
+  .navbar .content{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar .disconnect{
+    width: 20% !important;
+  }
+
+  .navbar .disconnect svg{
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .navbar .notif svg{
+    font-size: 40px;
+  }
+  
+  .navbar .dropdown{
+    display:  none;
   }
 
   .template #sidebarDiv .linkSidebar {
@@ -475,9 +606,35 @@ body {
     flex-direction: row !important;
     padding: 0 !important;
     margin: 0 !important;
+    height: 80% !important;
+    width: 80% !important;
+    align-items: center !important;
+    /* padding-top: 5% !important; */
+  }
+
+  .inputs{
+    flex-direction: column;
+  }
+
+  .hotels .modal-footer >div{
     width: 100% !important;
-    height: 100% !important;
-    padding-top: 5% !important;
+  }
+
+  .hotels .modal-footer{
+    padding: 0 !important;
+  }
+
+  .hotels .modal-title{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .hotels #delete, .hotels #saveUpdate{
+    font-size: 14px !important;
+  }
+
+  .dashboardCard{
+    padding-bottom: 30% !important;
   }
 }
 
@@ -488,6 +645,18 @@ body {
   }
   .data {
     margin: 0 !important;
+  }
+
+  .navbar ul{
+    display: flex;
+    width: 100%;
+    flex-direction: none !important;
+  }
+
+  .mobileSearch{
+    display: block !important;
+    width: 100% !important;
+    height: 50px;
   }
 
   .contentNavbar {
@@ -511,21 +680,6 @@ body {
     z-index: 1000 !important;
   }
 
-  #table {
-    width: 400% !important;
-    margin: 0 !important;
-  }
-
-  .tableau {
-    width: 100% !important;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-
   .template .contenu {
     display: flex;
     flex-direction: column-reverse;
@@ -533,6 +687,11 @@ body {
 
   .template .contenu #sidebarDiv {
     width: 100% !important;
+    height: 15% !important;
+  }
+
+  .template .contenu .cardHotels{
+    width: 90% !important;
   }
 
   .template .contenu #sidebarDiv #logo,
@@ -549,3 +708,17 @@ body {
     justify-content: space-around !important;
   }
 }
+@media screen and (max-width: 1024px){
+  .sidebar .textSidebar{
+    font-size: 12px !important;
+  }
+
+  .sidebar .brand-name{
+    font-size: 11px !important;
+  }
+  .sidebar #logo img{
+    width: 18px !important;
+    height: 20px !important;
+  }
+}
+

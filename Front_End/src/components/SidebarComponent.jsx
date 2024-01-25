@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {NavLink, Link } from "react-router-dom";
 
-function SidebarComponent({ title, icon, path }) {
+function SidebarComponent({ title, icon, path, id}) {
   return (
-    <Link
+    <NavLink
       style={{ textDecoration: "none" }}
-      className="py-3 ps-3 my-2 items "
+      className="py-2 ps-3 items d-flex align-items-center"
       to={path}
-      tabIndex="0"
+      id={id}
     >
-      <span>{icon}</span>
-      <span className="fs-5 mx-2">{title}</span>
-    </Link>
+      <span className="iconSidebar">{icon}</span>
+      <span className="fs-5 mx-2 textSidebar">{title}</span>
+    </NavLink>
   );
 }
 

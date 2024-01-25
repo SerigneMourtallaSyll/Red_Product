@@ -2,7 +2,7 @@ import React from 'react'
 
 function InputModal({label, type, func, value}) {
   return (
-    <div className="col">
+    <div className="col py-2">
       <label htmlFor="email" className="form-label">
         {label}
       </label>

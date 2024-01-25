@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormModals from "./FormModals";
 import axios from "axios";
 import toast from "react-hot-toast"
 
-function AddHotelLogique({fetchData, onHide}) {
+function AddHotelLogique(props) {
   const [nameHotel, setNameHotel] = useState("");
   const [adresse, setAdresse] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ function AddHotelLogique({fetchData, onHide}) {
           "Content-Type": "multipart/form-data",
         },
       });
-    fetchData
+    props.fetchData
     toast.success("Ajout réussi avec succès");
     setNameHotel("");
     setAdresse("");
@@ -38,7 +38,7 @@ function AddHotelLogique({fetchData, onHide}) {
     setNumber(0);
     setPrice(0);
     setImage("");
-    onHide();
+    props.onHide();
     } catch (err) {
       console.log(err);
     }

@@ -17,6 +17,7 @@ function CardContentHotels({
   setNameHotel,
   setDevise,
   setPrice,
+  setImage
 }) {
   const [modalShow, setModalShow] = useState(false);
 
@@ -57,6 +58,7 @@ function CardContentHotels({
         setPrice={setPrice}
         setNumber={setNumber}
         setDevise={setDevise}
+        setImage={setImage}
       />
     </div>
   );

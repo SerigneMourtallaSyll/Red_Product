@@ -3,7 +3,7 @@ import CardContentHotels from "./CardContentHotels";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-function HotelsCard() {
+function HotelsCard(props) {
   const [hotels, setHotels] = useState([]);
   const [nameHotel, setNameHotel] = useState("");
   const [adresse, setAdresse] = useState("");
@@ -29,6 +29,7 @@ function HotelsCard() {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+  console.log(hotels);
 
   const handleUpdate = async (hotelId) => {
     const formData = new FormData();
@@ -38,6 +39,9 @@ function HotelsCard() {
     formData.append("number", number);
     formData.append("price", price);
     formData.append("devise", devise || "F XOF");
+    formData.append("image", image);
+    // if(image){
+    // }
 
     try {
       const res = await axios.put(
@@ -74,7 +78,7 @@ function HotelsCard() {
   }
 
   return (
-    <div className="pt-1">
+    <div className="">
       <div className="row m-0 px-2 d-flex justify-content-around flex-wrap">
         {hotels.map((hotel, index) => (
           <CardContentHotels
@@ -89,6 +93,7 @@ function HotelsCard() {
             setNumber={(e) => setNumber(e.target.value)}
             setDevise={(e) => setDevise(e.target.value)}
             setPrice={(e) => setPrice(e.target.value)}
+            setImage={(selectedFile) => setImage(selectedFile)}
           />
         ))}
       </div>

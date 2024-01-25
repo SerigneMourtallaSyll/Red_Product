@@ -1,38 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import MobileSearch from "./MobileSearch";
 
-function NavUser() {
-    const [notificationCount, setNotificationCount] = useState(3);
-    const location = useLocation();
-    const getRouteText = () => {
-      const routeTexts = {
-        "/admin/dashboard": "Dashboard",
-        "/admin/hotels": "Liste des hotels",
-      };
-  
-      return routeTexts[location.pathname] || "";
+function NavUser(props) {
+  const [notificationCount, setNotificationCount] = useState(3);
+  const [inputSearchShow, setInputSearchShow] = useState(false);
+
+  const location = useLocation();
+  const getRouteText = () => {
+    const routeTexts = {
+      "/admin/dashboard": "Dashboard",
+      "/admin/hotels": "Liste des hotels",
     };
+    return routeTexts[location.pathname] || "";
+  };
 
   return (
     <nav className="navbar navbar-expand-md navbar-light border-bottom py-1">
-      <div className="container-fluid">
+      <div className="container-fluid content">
         <div className="navbar-brand">
-          <span className="brand-name mx-2 text-dark fw-bold">{getRouteText()}</span>
+          <span className="brand-name mx-2 text-dark fw-bold">
+            {getRouteText()}
+          </span>
         </div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
@@ -51,7 +44,7 @@ function NavUser() {
             </div>
           </form>
           <ul className="navbar-nav">
-            <li className="nav-item d-flex align-items-center position-relative px-3">
+            <li className="nav-item d-flex align-items-center position-relative px-3 notif">
               <span className="notification-badge">{notificationCount}</span>
               <NotificationsNoneIcon />
             </li>
@@ -67,7 +60,7 @@ function NavUser() {
                 <AccountCircleIcon className="fs-1" />
               </a>
             </li>
-            <li className="nav-item d-flex align-items-center">
+            <li className="nav-item d-flex align-items-center disconnect">
               <Link to="/connexion" className="nav-link">
                 <LogoutIcon />
               </Link>
@@ -75,6 +68,7 @@ function NavUser() {
           </ul>
         </div>
       </div>
+      {props.show && <MobileSearch />}
     </nav>
   );
 }

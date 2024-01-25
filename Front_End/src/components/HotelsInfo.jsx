@@ -30,6 +30,7 @@ function HotelsInfo(props) {
           funcEmail={props.setEmail}
           funcNumber={props.setNumber}
           funcPrice={props.setPrice}
+          funcImage={props.setImage}
           handleSubmit={handleSubmit}
           Annulation={
             <div className="col-3 cancel">
@@ -44,7 +45,7 @@ function HotelsInfo(props) {
           <div className="modal-body px-3 border-0">
             <h6 className="py-1">
               <span className="h6 fw-bold">Nom de l'hotel :</span>{" "}
-              {props.hotelName}
+              {props.nameHotel}
             </h6>
             <h6 className="py-1">
               <span className="h6 fw-bold">Adresse :</span> {props.adresse}
@@ -78,7 +79,7 @@ function HotelsInfo(props) {
                   func={handleEditClick}
                 />
               </div>
-              <div className="col-4 mx-3">
+              <div className="col-4 mx-3 border-none bg-transparent">
                 <Button text={"Supprimer"} id={"delete"} type={"button"} func={props.handleDeleteHotel} />
               </div>
             </div>

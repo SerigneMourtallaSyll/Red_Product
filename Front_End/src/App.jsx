@@ -9,13 +9,17 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 function App() {
+  const [inputSearchShow, setInputSearchShow] = useState(false);
+  const toggleInputSearch = () => {
+    setInputSearchShow(!inputSearchShow);
+  };
 
   return (
     <div>
       <Toaster />
       <Template
-        sidebar={<SidebarComp />}
-        navbar={<NavBar />}
+        sidebar={<SidebarComp toggleInputSearch={toggleInputSearch} />}
+        navbar={<NavBar show={inputSearchShow}  />}
       >
         <Outlet />
       </Template>
