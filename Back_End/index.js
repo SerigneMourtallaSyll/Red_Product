@@ -79,5 +79,5 @@ app.use(upload.single("image"));
 app.use('/hotels', RouteHotels);
 
 app.listen(3001, () => {
-  console.log("Serveur is running");
+  console.log("Serveur is running")
 });
