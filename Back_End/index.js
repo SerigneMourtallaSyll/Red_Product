@@ -24,15 +24,7 @@ let upload = multer({
 });
 
 app.use(express.json());
-app.use(cors({
-  origin: [""],
-  methods: ["POST", "GET"],
-  credentials: true
-}));
-
-app.get("/", (req, res) => {
-  res.json("Hello")
-})
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URL, {
