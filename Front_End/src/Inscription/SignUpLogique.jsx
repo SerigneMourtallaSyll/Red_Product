@@ -13,7 +13,7 @@ function SignUpLogique() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://red-product-api.onrender.com/register", { name, email, password })
+      .post("https://red-product-backend.onrender.com/register", { name, email, password })
       .then((res) => {
         if (res.status === 200) {
           toast.success("Inscription réussie avec succès")
