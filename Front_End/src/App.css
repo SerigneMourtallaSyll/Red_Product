@@ -370,6 +370,14 @@ body {
   box-shadow: none !important;
 }
 
+.hotels .cardHotels img{
+  width: 100% !important;
+  height: 200px !important;
+}
+
+.hotels .cardHotels{
+  height: 300px !important;
+}
 .dashboard {
   width: 100%;
   height: 100%;

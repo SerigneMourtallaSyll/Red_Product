@@ -22,7 +22,7 @@ function CardContentHotels({
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className="card p-0 mb-4 cardHotels" style={{ width: "14rem" }}>
+    <div className="card p-0 mb-4 cardHotels" style={{ width: "15rem" }}>
       <img
         src={image}
         className="card-img-top img-fluid pe-auto imageCard"
