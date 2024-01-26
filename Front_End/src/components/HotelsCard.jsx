@@ -16,7 +16,7 @@ function HotelsCard(props) {
   const fetchData = useCallback(() => {
     try {
       const unsubscribeHotels = async () => {
-        const response = await axios.get("http://localhost:3001/hotels");
+        const response = await axios.get("https://red-product-api.onrender.com/hotels");
         setHotels(response.data);
       };
 
@@ -45,7 +45,7 @@ function HotelsCard(props) {
 
     try {
       const res = await axios.put(
-        `http://localhost:3001/hotels/${hotelId}`,
+        `https://red-product-api.onrender.com/hotels/${hotelId}`,
         formData,
         {
           headers: {
@@ -63,7 +63,7 @@ function HotelsCard(props) {
   const handleDeleteHotel = async(hotelId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:3001/hotels/${hotelId}`,
+        `https://red-product-api.onrender.com/hotels/${hotelId}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -84,7 +84,7 @@ function HotelsCard(props) {
           <CardContentHotels
             {...hotel}
             key={index}
-            image={`http://localhost:3001/api/uploads/${hotel.image}`}
+            image={`https://red-product-api.onrender.com/api/uploads/${hotel.image}`}
             handleUpdate={() => handleUpdate(hotel._id)}
             handleDeleteHotel={() => handleDeleteHotel(hotel._id)}
             setNameHotel={(e) => setNameHotel(e.target.value)}

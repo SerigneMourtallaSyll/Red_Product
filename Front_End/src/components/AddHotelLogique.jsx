@@ -25,7 +25,7 @@ function AddHotelLogique(props) {
       formData.append("image", image);
     }
     try {
-      const res = await axios.post("http://localhost:3001/hotels/", formData, {
+      const res = await axios.post("https://red-product-api.onrender.com/hotels/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
