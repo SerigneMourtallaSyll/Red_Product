@@ -10,7 +10,7 @@ function Hotels() {
   const fetchData = useCallback(() => {
     try {
       const unsubscribeHotels = async () => {
-        const response = await axios.get("http://localhost:3001/hotels");
+        const response = await axios.get("https://red-product-api.onrender.com/hotels");
         setHotels(response.data);
       };
 
