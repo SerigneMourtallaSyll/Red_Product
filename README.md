@@ -1,6 +1,6 @@
 # Red Product
 ***
-Site de réservation d'hôtel avec la partie admin ou on peut ajouter des hôtels, modifier ces informations, les supprimés et les afficher.
+Site de réservation d'hôtel avec la partie admin où on peut ajouter des hôtels, modifier ces informations, les supprimés et les afficher.
 
 1. [Installation](#installation)
 * git clone https://github.com/SerigneMourtallaSyll/Red_Product.git
