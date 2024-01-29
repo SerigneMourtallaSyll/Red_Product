@@ -1,10 +1,9 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import CardContentHotels from "./CardContentHotels";
 import axios from "axios";
 import toast from "react-hot-toast";
 
 function HotelsCard(props) {
-  const [hotels, setHotels] = useState([]);
   const [nameHotel, setNameHotel] = useState("");
   const [adresse, setAdresse] = useState("");
   const [email, setEmail] = useState("");
@@ -12,24 +11,6 @@ function HotelsCard(props) {
   const [price, setPrice] = useState(0);
   const [devise, setDevise] = useState("");
   const [image, setImage] = useState(null);
-
-  const fetchData = useCallback(() => {
-    try {
-      const unsubscribeHotels = async () => {
-        const response = await axios.get("https://red-product-api.onrender.com/hotels");
-        setHotels(response.data);
-      };
-
-      unsubscribeHotels();
-    } catch (error) {
-      console.error("Error loading hotels:", error);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-  console.log(hotels);
 
   const handleUpdate = async (hotelId) => {
     const formData = new FormData();
@@ -53,7 +34,8 @@ function HotelsCard(props) {
           },
         }
       );
-      fetchData();
+      props.onHide();
+      props.fetchData();
       toast.success("Modification réussie avec succès");
     } catch (err) {
       console.log(err);
@@ -70,7 +52,8 @@ function HotelsCard(props) {
           },
         }
       );
-      fetchData();
+      props.onHide();
+      props.fetchData();
       toast.success("Suppréssion réussie avec succès");
     } catch (err) {
       console.log(err);
@@ -80,7 +63,7 @@ function HotelsCard(props) {
   return (
     <div className="">
       <div className="row m-0 px-2 d-flex justify-content-around flex-wrap">
-        {hotels.map((hotel, index) => (
+        {props.Hotel.map((hotel, index) => (
           <CardContentHotels
             {...hotel}
             key={index}

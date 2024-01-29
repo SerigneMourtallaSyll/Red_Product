@@ -343,6 +343,10 @@ body {
   color: inherit !important;
 }
 
+.navbar .disconnect{
+  cursor: pointer;
+}
+
 /*-------------Dashboard css-------------*/
 
 .dashboardCard {

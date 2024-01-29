@@ -1,14 +1,14 @@
 import React from 'react'
 
-function InputModal({label, type, func, value}) {
+function InputModal({label, type, func, value, id}) {
   return (
     <div className="col py-2">
-      <label htmlFor="email" className="form-label">
+      <label htmlFor={id} className="form-label">
         {label}
       </label>
-      <input type={type} className="form-control" id="email" placeholder="" onChange={func} value={value} required/>
+      <input type={type} className="form-control" id={id} placeholder="" onChange={func} value={value} required/>
     </div>
   );
 }
 
-export default InputModal
+export default InputModal;

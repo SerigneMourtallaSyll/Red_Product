@@ -1,8 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import DashboardCard from '../components/DashboardCard';
 
 function Dashboard() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Vérifiez si l'utilisateur est déjà connecté
+    const user = localStorage.getItem("userName");
+      // Si l'utilisateur est connecté, redirigez-le vers le tableau de bord approprié
+      if (!user) {
+        navigate("/connexion");
+      }
+  }, [navigate]);
+  
   return (
       <div className="dashboard">
         <div className="titleDashboard px-4 py-1">

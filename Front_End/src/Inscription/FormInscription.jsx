@@ -30,7 +30,7 @@ function FormInscription({funcName, funcEmail, funcPassword, handleSubmit, name,
           <div className="row py-3">
             <div className="col">
               <div className="form-check">
-                <input className="form-check-input" type="checkbox" />
+                <input className="form-check-input" type="checkbox" required />
                 <label className="form-check-label">
                   Accepter les termes et la politique
                 </label>

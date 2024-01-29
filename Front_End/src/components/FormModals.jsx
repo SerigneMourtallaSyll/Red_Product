@@ -28,15 +28,15 @@ function FormModals({nameHotel, adresse, email,number,price, devise, funcName, f
     <div className="modal-body px-5 border-0 formModals">
       <form onSubmit={handleSubmit} className="border-none" encType="multipart/form-data">
         <div className="row inputs">
-          <InputModal type={"text"} label={"Nom de l'hotel"} func={funcName} value={nameHotel} />
-          <InputModal type={"text"} label={"Adresse"} func={funcAdresse} value={adresse} />
+          <InputModal type={"text"} label={"Nom de l'hotel"} func={funcName} value={nameHotel} id={"name"} />
+          <InputModal type={"text"} label={"Adresse"} func={funcAdresse} value={adresse} id={"adresse"} />
         </div>
         <div className="row inputs">
-          <InputModal type={"email"} label={"E-mail"} func={funcEmail} value={email} />
-          <InputModal type={"number"} label={"Numéro de téléphone"} func={funcNumber} value={number} />
+          <InputModal type={"email"} label={"E-mail"} func={funcEmail} value={email} id={"email"} />
+          <InputModal type={"number"} label={"Numéro de téléphone"} func={funcNumber} value={number} id={"number"} />
         </div>
         <div className="row inputs">
-          <InputModal type={"text"} label={"Prix par nuit"} func={funcPrice} value={price} />
+          <InputModal type={"text"} label={"Prix par nuit"} func={funcPrice} value={price} id={"price"} />
           <div className="col py-2">
             <label htmlFor="devise" className="form-label">
               Devise

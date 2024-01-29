@@ -7,7 +7,6 @@ import MobileSearch from "./MobileSearch";
 
 function NavUser(props) {
   const [notificationCount, setNotificationCount] = useState(3);
-  const [inputSearchShow, setInputSearchShow] = useState(false);
 
   const location = useLocation();
   const getRouteText = () => {
@@ -16,6 +15,11 @@ function NavUser(props) {
       "/admin/hotels": "Liste des hotels",
     };
     return routeTexts[location.pathname] || "";
+  };
+
+  const deconnexion = () => {
+    localStorage.removeItem("userName");
+    window.location.replace("/connexion");
   };
 
   return (
@@ -61,9 +65,7 @@ function NavUser(props) {
               </a>
             </li>
             <li className="nav-item d-flex align-items-center disconnect">
-              <Link to="/connexion" className="nav-link">
-                <LogoutIcon />
-              </Link>
+              <LogoutIcon onClick={deconnexion} />
             </li>
           </ul>
         </div>

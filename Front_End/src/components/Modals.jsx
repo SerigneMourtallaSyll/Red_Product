@@ -1,5 +1,6 @@
 import React from "react";
-import AddHotelLogique from "./AddHotelLogique";
+// import AddHotelLogique from "./AddHotelLogique";
+import FormModals from "./FormModals";
 
 function Modals(props) {
 
@@ -7,6 +8,9 @@ function Modals(props) {
     if (e.target.classList.contains("modal")) {
       props.onHide();
     }
+  };
+  const handleImageChange = (selectedFile) => {
+    props.setImage(selectedFile);
   };
   return (
     <div
@@ -37,7 +41,22 @@ function Modals(props) {
               aria-label="Close"
             ></button>
           </div>
-          <AddHotelLogique fetchData={props.fetchData} onHide={props.onHide}/>
+          <FormModals
+            nameHotel={props.nameHotel}
+            adresse={props.adresse}
+            email={props.email}
+            number={props.number}
+            price={props.price}
+            devise={props.devise}
+            funcName={(e) => props.setNameHotel(e.target.value)}
+            funcAdresse={(e) => props.setAdresse(e.target.value)}
+            funcEmail={(e) => props.setEmail(e.target.value)}
+            funcNumber={(e) => props.setNumber(e.target.value)}
+            funcPrice={(e) => props.setPrice(e.target.value)}
+            funcDevise={(e) => props.setDevise(e.target.value)}
+            funcImage={handleImageChange}
+            handleSubmit={props.handleSubmit}
+        />
         </div>
       </div>
     </div>
